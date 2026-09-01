@@ -3,20 +3,17 @@ import {
   Phone,
   Mail,
   MapPin,
-  Award,
-  BookOpen,
   UserCheck,
   Menu,
   X,
   FileText,
   ChevronRight,
-  ExternalLink,
-  ShieldCheck,
   Sparkles,
   Bell
 } from 'lucide-react';
 import { COLLEGE_INFO, NOTICES } from '../data/collegeData';
 import { NitLogo } from './NitLogo';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
   onOpenEnquiry: () => void;
@@ -34,7 +31,6 @@ export const Header: React.FC<HeaderProps> = ({
   setActiveSection
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeNoticeIdx, setActiveNoticeIdx] = useState(0);
 
   const scrollToSection = (id: string) => {
     if (setActiveSection) {
@@ -61,9 +57,9 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="w-full bg-white border-b border-slate-200 text-slate-800">
+    <header className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100 transition-colors duration-200">
       {/* Top Institutional Notification & Regulatory Strip in Deep Blue with Yellow Accents */}
-      <div className="bg-[#1E3A8A] text-white px-4 py-1.5 text-xs font-semibold">
+      <div className="bg-[#1E3A8A] dark:bg-[#0f1738] text-white px-4 py-1.5 text-xs font-semibold">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-3 flex-wrap">
             <span className="bg-yellow-400 text-blue-950 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider flex items-center gap-1 shadow-sm">
@@ -96,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Branding Header Bar */}
-      <div className="bg-white px-4 py-3 border-b border-slate-200">
+      <div className="bg-white dark:bg-slate-900 px-4 py-3 border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Logo & Identity */}
           <div
@@ -108,17 +104,17 @@ export const Header: React.FC<HeaderProps> = ({
 
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[11px] font-bold text-blue-900 uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-blue-900 dark:text-blue-400 uppercase tracking-wider">
                   {COLLEGE_INFO.parentTrust} (Estd. 1918)
                 </span>
-                <span className="text-[10px] bg-yellow-100 text-yellow-900 font-semibold px-1.5 py-0.2 rounded border border-yellow-300">
+                <span className="text-[10px] bg-yellow-100 dark:bg-yellow-950/60 text-yellow-900 dark:text-yellow-300 font-semibold px-1.5 py-0.2 rounded border border-yellow-300 dark:border-yellow-700/50">
                   {COLLEGE_INFO.mottoMarathi}
                 </span>
               </div>
-              <h1 className="text-lg md:text-xl font-extrabold tracking-tight text-blue-950 group-hover:text-blue-700 transition">
+              <h1 className="text-lg md:text-xl font-extrabold tracking-tight text-blue-950 dark:text-white group-hover:text-blue-700 dark:group-hover:text-yellow-400 transition">
                 New Institute of Technology, Kolhapur
               </h1>
-              <p className="text-xs text-slate-600 hidden sm:block">
+              <p className="text-xs text-slate-600 dark:text-slate-400 hidden sm:block">
                 Approved by AICTE, DTE Maharashtra | Affiliated to DBATU (B.Tech) &amp; MSBTE (Diploma)
               </p>
             </div>
@@ -126,19 +122,21 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Header Action CTAs */}
           <div className="hidden lg:flex items-center gap-2.5">
+            <ThemeToggle variant="compact" />
+
             <button
               onClick={onOpenProspectus}
-              className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 flex items-center gap-1.5 transition cursor-pointer"
+              className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 flex items-center gap-1.5 transition cursor-pointer"
             >
-              <FileText className="w-3.5 h-3.5 text-blue-800" />
+              <FileText className="w-3.5 h-3.5 text-blue-800 dark:text-yellow-400" />
               Prospectus 2026–27
             </button>
 
             <button
               onClick={onOpenMis}
-              className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-300 flex items-center gap-1.5 transition cursor-pointer"
+              className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-blue-50 dark:bg-blue-950/50 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-blue-900 dark:text-blue-300 border border-blue-300 dark:border-blue-700 flex items-center gap-1.5 transition cursor-pointer"
             >
-              <UserCheck className="w-3.5 h-3.5 text-blue-800" />
+              <UserCheck className="w-3.5 h-3.5 text-blue-800 dark:text-blue-300" />
               Student MIS
             </button>
 
@@ -153,6 +151,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle variant="compact" />
             <button
               onClick={onOpenEnquiry}
               className="px-3 py-1.5 text-xs font-bold bg-yellow-400 text-blue-950 rounded-lg cursor-pointer shadow-sm"
@@ -161,7 +160,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300 cursor-pointer"
+              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 cursor-pointer"
               aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -171,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Primary Navigation Bar */}
-      <nav className="hidden lg:block bg-slate-50 border-b border-slate-200 px-4">
+      <nav className="hidden lg:block bg-slate-50 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-1 py-1.5">
             {navLinks.map((link) => (
@@ -182,8 +181,8 @@ export const Header: React.FC<HeaderProps> = ({
                   link.highlight
                     ? 'text-blue-950 font-bold bg-yellow-300 hover:bg-yellow-400 border border-yellow-400 shadow-sm'
                     : activeSection === link.id
-                    ? 'bg-blue-900 text-white font-bold shadow-sm'
-                    : 'text-slate-700 hover:text-blue-900 hover:bg-slate-200/70'
+                    ? 'bg-blue-900 dark:bg-blue-700 text-white font-bold shadow-sm'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-blue-900 dark:hover:text-yellow-400 hover:bg-slate-200/70 dark:hover:bg-slate-800'
                 }`}
               >
                 {link.label}
@@ -192,9 +191,9 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Hotlines */}
-          <div className="text-xs text-slate-600 flex items-center gap-3">
-            <span className="flex items-center gap-1 text-blue-900 font-bold">
-              <Phone className="w-3.5 h-3.5 text-yellow-600" />
+          <div className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-3">
+            <span className="flex items-center gap-1 text-blue-900 dark:text-yellow-400 font-bold">
+              <Phone className="w-3.5 h-3.5 text-yellow-600 dark:text-yellow-400" />
               Admission Helpline: {COLLEGE_INFO.admissionHotlines[0]}
             </span>
           </div>
@@ -202,17 +201,17 @@ export const Header: React.FC<HeaderProps> = ({
       </nav>
 
       {/* Live Notice Marquee Bar */}
-      <div className="bg-amber-50/80 border-b border-amber-200/80 px-4 py-1.5 text-xs">
+      <div className="bg-amber-50/80 dark:bg-slate-800/90 border-b border-amber-200/80 dark:border-slate-700 px-4 py-1.5 text-xs">
         <div className="max-w-7xl mx-auto flex items-center gap-3">
           <span className="flex items-center gap-1 bg-yellow-400 text-blue-950 px-2.5 py-0.5 rounded-md text-[11px] font-extrabold uppercase tracking-wider shrink-0 shadow-xs">
             <Bell className="w-3 h-3 text-blue-950 animate-bounce" />
             Announcement
           </span>
-          <div className="overflow-hidden whitespace-nowrap text-slate-800 relative w-full flex">
+          <div className="overflow-hidden whitespace-nowrap text-slate-800 dark:text-slate-200 relative w-full flex">
             <div className="animate-marquee hover:pause flex items-center shrink-0">
               {[...NOTICES, ...NOTICES].map((n, idx) => (
                 <span key={`${n.id}-${idx}`} className="mx-6 inline-flex items-center gap-2">
-                  <span className="text-blue-900 font-bold">[{n.category}]</span>
+                  <span className="text-blue-900 dark:text-yellow-400 font-bold">[{n.category}]</span>
                   <button
                     onClick={() => {
                       if (n.category === 'Admissions') {
@@ -221,7 +220,7 @@ export const Header: React.FC<HeaderProps> = ({
                         scrollToSection('admissions');
                       }
                     }}
-                    className="hover:text-blue-700 hover:underline cursor-pointer font-medium text-left"
+                    className="hover:text-blue-700 dark:hover:text-yellow-300 hover:underline cursor-pointer font-medium text-left"
                   >
                     {n.title}
                   </button>
@@ -230,7 +229,7 @@ export const Header: React.FC<HeaderProps> = ({
                       NEW
                     </span>
                   )}
-                  <span className="text-slate-400">•</span>
+                  <span className="text-slate-400 dark:text-slate-600">•</span>
                 </span>
               ))}
             </div>
@@ -240,16 +239,16 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 shadow-lg">
-          <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-200">
+        <div className="lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-3 shadow-lg">
+          <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-200 dark:border-slate-800">
             <button
               onClick={() => {
                 onOpenProspectus();
                 setMobileMenuOpen(false);
               }}
-              className="p-2.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-800 text-center flex items-center justify-center gap-1.5 border border-slate-300 cursor-pointer"
+              className="p-2.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-center flex items-center justify-center gap-1.5 border border-slate-300 dark:border-slate-700 cursor-pointer"
             >
-              <FileText className="w-4 h-4 text-blue-800" />
+              <FileText className="w-4 h-4 text-blue-800 dark:text-yellow-400" />
               Prospectus
             </button>
             <button
@@ -257,9 +256,9 @@ export const Header: React.FC<HeaderProps> = ({
                 onOpenMis();
                 setMobileMenuOpen(false);
               }}
-              className="p-2.5 rounded-xl text-xs font-semibold bg-blue-50 text-blue-900 text-center flex items-center justify-center gap-1.5 border border-blue-200 cursor-pointer"
+              className="p-2.5 rounded-xl text-xs font-semibold bg-blue-50 dark:bg-blue-950/50 text-blue-900 dark:text-blue-300 text-center flex items-center justify-center gap-1.5 border border-blue-200 dark:border-blue-800 cursor-pointer"
             >
-              <UserCheck className="w-4 h-4 text-blue-800" />
+              <UserCheck className="w-4 h-4 text-blue-800 dark:text-blue-300" />
               Student MIS
             </button>
           </div>
@@ -272,7 +271,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between transition cursor-pointer ${
                   link.highlight
                     ? 'bg-yellow-300 text-blue-950 font-bold border border-yellow-400'
-                    : 'text-slate-800 hover:bg-slate-100'
+                    : 'text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 <span>{link.label}</span>
@@ -281,17 +280,17 @@ export const Header: React.FC<HeaderProps> = ({
             ))}
           </div>
 
-          <div className="pt-3 border-t border-slate-200 text-xs text-slate-600 space-y-1.5">
+          <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 space-y-1.5">
             <p className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-blue-800" />
-              Direct Admission Desk: <strong className="text-slate-900">{COLLEGE_INFO.admissionHotlines[0]}</strong>
+              <Phone className="w-3.5 h-3.5 text-blue-800 dark:text-yellow-400" />
+              Direct Admission Desk: <strong className="text-slate-900 dark:text-white">{COLLEGE_INFO.admissionHotlines[0]}</strong>
             </p>
             <p className="flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5 text-blue-800" />
+              <Mail className="w-3.5 h-3.5 text-blue-800 dark:text-yellow-400" />
               {COLLEGE_INFO.email}
             </p>
-            <p className="flex items-center gap-2 text-[11px] text-slate-500">
-              <MapPin className="w-3.5 h-3.5 text-blue-800" />
+            <p className="flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+              <MapPin className="w-3.5 h-3.5 text-blue-800 dark:text-yellow-400" />
               {COLLEGE_INFO.address}
             </p>
           </div>

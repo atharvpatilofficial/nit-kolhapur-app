@@ -1,16 +1,41 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #FFFFFF;
     color: #1E293B;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.dark body {
+    background-color: #0B0F17;
+    color: #E2E8F0;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
     letter-spacing: -0.02em;
     color: #0F172A;
+  }
+
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6 {
+    color: #F8FAFC;
   }
 }
 
@@ -36,7 +61,7 @@
   animation-play-state: paused;
 }
 
-/* Clean light theme custom scrollbars */
+/* Custom scrollbars for light and dark modes */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -52,6 +77,18 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #EAB308;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
   background: #EAB308;
 }
 

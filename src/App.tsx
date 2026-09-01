@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
   Phone,
   MessageCircle,
-  FileText,
   Sparkles,
   ArrowUp,
-  GraduationCap
 } from 'lucide-react';
+import { ThemeProvider } from './context/ThemeContext';
+import { ThemeToggle } from './components/ThemeToggle';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
@@ -32,7 +32,7 @@ import { VideoTourModal } from './components/VideoTourModal';
 import { Department } from './types/college';
 import { COLLEGE_INFO } from './data/collegeData';
 
-export default function App() {
+function MainApp() {
   const [selectedDepartment, setSelectedDepartment] = useState<Department | null>(null);
   const [isMisOpen, setIsMisOpen] = useState(false);
   const [isProspectusOpen, setIsProspectusOpen] = useState(false);
@@ -63,8 +63,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-yellow-300 selection:text-slate-950">
-      {/* Sticky Header with Notice Marquee */}
+    <div className="min-h-screen bg-white dark:bg-[#0B0F17] text-slate-900 dark:text-slate-100 font-sans selection:bg-yellow-300 selection:text-slate-950 transition-colors duration-300">
+      {/* Corner Light/Dark Mode Toggle (Bottom Left Corner) */}
+      <ThemeToggle variant="corner" />
+
+      {/* Header with Notice Marquee */}
       <Header
         onOpenMis={() => setIsMisOpen(true)}
         onOpenProspectus={() => setIsProspectusOpen(true)}
@@ -99,11 +102,11 @@ export default function App() {
         >
           <ProgramsSection
             onSelectDepartment={(dept) => setSelectedDepartment(dept)}
-            onOpenEnquiry={(deptName) => handleOpenEnquiryWithDept(deptName)}
+            onOpenEnquiryWithDept={(deptName) => handleOpenEnquiryWithDept(deptName)}
           />
         </motion.div>
 
-        {/* 4. Admissions 2026-27, Fee Calculator & Spot Booking */}
+        {/* 4. Admissions 2026–27 (Fees, Spot Booking, Cutoffs, Scholarships) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +119,7 @@ export default function App() {
           />
         </motion.div>
 
-        {/* 5. Placements, Recruiters & Alumni Network */}
+        {/* 5. Placements & Corporate Partners */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +129,7 @@ export default function App() {
           <PlacementsSection />
         </motion.div>
 
-        {/* 6. 20+ Acre Campus, Library, 5-Route Bus Network & Hostels */}
+        {/* 6. Campus, Smart Labs, Hostels & Transport */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +139,7 @@ export default function App() {
           <CampusSection />
         </motion.div>
 
-        {/* 7. Center of Excellence in AI, IIC & Student Innovations */}
+        {/* 7. Innovation, AI Research, IIC & Center of Excellence */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +149,7 @@ export default function App() {
           <InnovationSection />
         </motion.div>
 
-        {/* 8. Faculty Directory, Research & Publications */}
+        {/* 8. Faculty Directory & Leadership */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -200,13 +203,13 @@ export default function App() {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="p-3 rounded-full bg-white text-slate-700 hover:text-blue-900 border border-slate-200 shadow-xl transition hover:scale-105 cursor-pointer hover:bg-slate-50"
+            className="p-3 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-900 dark:hover:text-yellow-300 border border-slate-200 dark:border-slate-700 shadow-xl transition hover:scale-105 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700"
           >
             <ArrowUp className="w-4 h-4" />
           </button>
         )}
 
-        <div className="flex items-center gap-2 bg-white/95 p-1.5 rounded-full border border-slate-200 shadow-2xl backdrop-blur">
+        <div className="flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 p-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur">
           {/* Direct Phone Call */}
           <a
             href={`tel:${COLLEGE_INFO.admissionHotlines[0]}`}
@@ -289,5 +292,13 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <MainApp />
+    </ThemeProvider>
   );
 }
