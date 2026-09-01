@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Gear 3D Gradients matching official emblem -->
+    <radialGradient id="gearBaseGrad" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFDE38" />
+      <stop offset="60%" stop-color="#F2B705" />
+      <stop offset="90%" stop-color="#D99B00" />
+      <stop offset="100%" stop-color="#B88000" />
+    </radialGradient>
+
+    <linearGradient id="toothBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE866" />
+      <stop offset="30%" stop-color="#F2B705" />
+      <stop offset="100%" stop-color="#A66F00" />
+    </linearGradient>
+
+    <radialGradient id="gearShadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="85%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.35" />
+    </radialGradient>
+
+    <!-- Deep Blue Ring Gradient -->
+    <radialGradient id="navyRingGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#28348A" />
+      <stop offset="70%" stop-color="#1B2468" />
+      <stop offset="100%" stop-color="#12184B" />
+    </radialGradient>
+
+    <!-- Center Black Core -->
+    <radialGradient id="coreBlack" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#222222" />
+      <stop offset="80%" stop-color="#111111" />
+      <stop offset="100%" stop-color="#050505" />
+    </radialGradient>
+
+    <!-- Soft Drop Shadow Filter for outer gear -->
+    <filter id="gearBevelShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+
+    <filter id="crispTextShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.9" />
+    </filter>
+
+    <!-- TEXT PATHS -->
+    <!-- Top Arc for NEW INSTITUTE OF TECHNOLOGY (clockwise from left to right along top) -->
+    <path id="pathTopEnglish" d="M 85,256 A 171,171 0 1,1 427,256" fill="none" />
+    
+    <!-- Bottom Arc for KOLHAPUR (clockwise from left to right along bottom) -->
+    <path id="pathBottomEnglish" d="M 112,280 A 168,168 0 0,0 400,280" fill="none" />
+    
+    <!-- Marathi Top Motto Arc (clockwise from left to right) -->
+    <path id="pathTopMarathi" d="M 152,246 A 106,106 0 1,1 360,246" fill="none" />
+    
+    <!-- Marathi Bottom Motto Arc (clockwise from left to right) -->
+    <path id="pathBottomMarathi" d="M 152,266 A 106,106 0 0,0 360,266" fill="none" />
+  </defs>
+
+  <!-- Outer 16-Tooth Gear Mechanism with Realistic 3D Profile -->
+  <g filter="url(#gearBevelShadow)">
+    <g transform="translate(256, 256)">
+      <!-- 16 Tooth Cogs around circumference -->
+      <!-- 0 deg / 180 deg -->
+      <g>
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 22.5 deg -->
+      <g transform="rotate(22.5)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 45 deg -->
+      <g transform="rotate(45)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 67.5 deg -->
+      <g transform="rotate(67.5)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 90 deg -->
+      <g transform="rotate(90)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 112.5 deg -->
+      <g transform="rotate(112.5)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 135 deg -->
+      <g transform="rotate(135)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+      <!-- 157.5 deg -->
+      <g transform="rotate(157.5)">
+        <path d="M -30,-252 L 30,-252 L 25,-215 L -25,-215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+        <path d="M -30,252 L 30,252 L 25,215 L -25,215 Z" fill="url(#toothBevel)" stroke="#9E6E00" stroke-width="1.5" stroke-linejoin="round" />
+      </g>
+
+      <!-- Main Gold Gear Body -->
+      <circle r="226" fill="url(#gearBaseGrad)" stroke="#B88000" stroke-width="2" />
+      <circle r="226" fill="url(#gearShadowGrad)" />
+      
+      <!-- Inner Bevel Ridge of Gear -->
+      <circle r="206" fill="none" stroke="#FFE866" stroke-width="2" opacity="0.8" />
+      <circle r="202" fill="none" stroke="#8C5C00" stroke-width="2" />
+    </g>
+  </g>
+
+  <!-- Deep Blue Ring for English College Name -->
+  <circle cx="256" cy="256" r="198" fill="url(#navyRingGrad)" stroke="#FFFFFF" stroke-width="3" />
+  <circle cx="256" cy="256" r="138" fill="none" stroke="#FFFFFF" stroke-width="3.5" />
+
+  <!-- Outer Ring Text: "NEW INSTITUTE OF TECHNOLOGY" -->
+  <text font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-size="28.5" font-weight="900" fill="#FFFFFF" letter-spacing="1.8px" filter="url(#crispTextShadow)">
+    <textPath href="#pathTopEnglish" startOffset="50%" text-anchor="middle">
+      NEW INSTITUTE OF TECHNOLOGY
+    </textPath>
+  </text>
+
+  <!-- Outer Ring Text: "KOLHAPUR" -->
+  <text font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF" letter-spacing="3.5px" filter="url(#crispTextShadow)">
+    <textPath href="#pathBottomEnglish" startOffset="50%" text-anchor="middle">
+      KOLHAPUR
+    </textPath>
+  </text>
+
+  <!-- Flanking White Dots separating the two English texts -->
+  <circle cx="122" cy="350" r="8.5" fill="#FFFFFF" filter="url(#crispTextShadow)" />
+  <circle cx="390" cy="350" r="8.5" fill="#FFFFFF" filter="url(#crispTextShadow)" />
+
+  <!-- Center Black Core Circle with White Ring Border -->
+  <circle cx="256" cy="256" r="136" fill="url(#coreBlack)" />
+  
+  <!-- Outer subtle circular border inside black core -->
+  <circle cx="256" cy="256" r="130" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.5" />
+
+  <!-- Top Marathi Motto: "\ बहुजन हिताय \" -->
+  <text font-family="'Noto Sans Devanagari', 'Arial', sans-serif" font-size="21" font-weight="800" fill="#FFFFFF" letter-spacing="1.2px" filter="url(#crispTextShadow)">
+    <textPath href="#pathTopMarathi" startOffset="50%" text-anchor="middle">
+      \ बहुजन हिताय \
+    </textPath>
+  </text>
+
+  <!-- Center Big Bold "NIT" Typography -->
+  <text x="256" y="291" font-family="'Arial Black', 'Impact', sans-serif" font-size="98" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2px" filter="url(#crispTextShadow)">
+    NIT
+  </text>
+
+  <!-- Bottom Marathi Motto: "\ बहुजन हिताय \" -->
+  <text font-family="'Noto Sans Devanagari', 'Arial', sans-serif" font-size="21" font-weight="800" fill="#FFFFFF" letter-spacing="1.2px" filter="url(#crispTextShadow)">
+    <textPath href="#pathBottomMarathi" startOffset="50%" text-anchor="middle">
+      \ बहुजन हिताय \
+    </textPath>
+  </text>
+</svg>

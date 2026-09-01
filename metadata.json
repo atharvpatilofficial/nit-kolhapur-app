@@ -1,0 +1,6 @@
+{
+  "name": "New Institute of Technology Kolhapur",
+  "description": "Official portal for New Institute of Technology (NIT), Kolhapur featuring B.Tech & Diploma programs, NBA accreditation, smart campus, placements, and admissions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
