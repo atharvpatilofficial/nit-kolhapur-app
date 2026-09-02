@@ -24,7 +24,7 @@ export const VideoTourModal: React.FC<VideoTourModalProps> = ({ onClose, onOpenE
             <NitLogo size={44} showGlow />
             <div>
               <h2 className="text-base font-bold text-blue-950">NIT Kolhapur 20+ Acre Campus Virtual Tour</h2>
-              <p className="text-xs text-slate-500 font-medium">Shivaji Peth, Kolhapur • Estd. 1983</p>
+              <p className="text-xs text-slate-500 font-medium">Shantinagar, Mudshingi, Kolhapur • Estd. 1983</p>
             </div>
           </div>
 

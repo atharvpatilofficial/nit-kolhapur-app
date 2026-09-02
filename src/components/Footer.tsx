@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({
                 New Institute of Technology
               </div>
               <div className="text-[10px] text-yellow-700 font-bold">
-                Shivaji Peth, Kolhapur • Estd. 1983
+                Shantinagar, Mudshingi, Kolhapur • Estd. 1983
               </div>
             </div>
           </div>

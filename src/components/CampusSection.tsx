@@ -42,7 +42,7 @@ export const CampusSection: React.FC = () => {
           badgeIcon={<Compass className="w-3.5 h-3.5 text-yellow-700" />}
           badgeColor="yellow"
           title="Campus Life, Library & Living Facilities"
-          subtitle="Located in historic Shivaji Peth, Kolhapur—featuring world-class labs, massive central library, 530+ capacity hostels, and the district’s largest dedicated college bus fleet."
+          subtitle="Located in Shantinagar, Mudshingi, Kolhapur—featuring world-class labs, massive central library, 530+ capacity hostels, and the district’s largest dedicated college bus fleet."
         />
 
         {/* Facility Navigation Tabs */}

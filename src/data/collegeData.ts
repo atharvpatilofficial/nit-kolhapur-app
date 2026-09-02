@@ -21,7 +21,7 @@ export const COLLEGE_INFO = {
   parentTrust: 'Shri Prince Shivaji Maratha Boarding House, Kolhapur (SPSMBH)',
   parentTrustEst: 1920,
   founderInspiration: 'Rajarshi Chhatrapati Shahu Maharaj',
-  address: '1061, A Ward, Shivaji Peth, Kolhapur – 416012, Maharashtra, India',
+  address: 'Shantinagar, Mudshingi, Kolhapur, Maharashtra 416005',
   phone: '(0231) 2623824',
   tollFree: '1800 890 6290',
   admissionHotlines: ['8799926060', '8799926069', '8799926070'],
@@ -797,7 +797,7 @@ export const BUS_ROUTES: BusRoute[] = [
   {
     routeNumber: 5,
     routeName: 'Kolhapur City Metro Loop (CBS – Kawala Naka – Rajarampuri – Campus)',
-    stops: ['Central Bus Stand (CBS)', 'Railway Station', 'Kawala Naka', 'Cyber Chowk', 'Rajarampuri 1st Lane', 'Shivaji Peth Campus'],
+    stops: ['Central Bus Stand (CBS)', 'Railway Station', 'Kawala Naka', 'Cyber Chowk', 'Rajarampuri', 'Mudshingi Campus'],
     startPoint: 'Central Bus Stand (08:00 AM)',
     morningTime: '08:00 AM – 08:50 AM',
     eveningTime: '05:15 PM – 06:00 PM',
@@ -811,7 +811,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Sprawling 20+ Acre Tech Campus',
     category: 'Campus',
     imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80',
-    caption: 'Main Academic Quadrangle and lush green corridors in Shivaji Peth, Kolhapur.'
+    caption: 'Main Academic Quadrangle and lush green corridors in Shantinagar, Mudshingi, Kolhapur.'
   },
   {
     id: 'g-2',

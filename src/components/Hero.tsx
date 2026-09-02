@@ -250,7 +250,7 @@ export const Hero: React.FC<HeroProps> = ({
               <AnimatedCounter value={COLLEGE_INFO.stats.campusAcres} />
             </div>
             <div className="text-xs text-slate-800 dark:text-slate-200 font-bold mt-1">Acre Tech Campus</div>
-            <div className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Shivaji Peth, Kolhapur</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Mudshingi, Kolhapur</div>
           </AnimatedCard>
 
           <AnimatedCard delay={0.3} className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-center shadow-xs hover:shadow-md hover:border-yellow-400 transition">
