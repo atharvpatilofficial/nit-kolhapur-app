@@ -22,15 +22,24 @@ import { NitLogo } from './NitLogo';
 
 interface ProgramsSectionProps {
   onSelectDepartment: (dept: Department) => void;
-  onOpenEnquiry: (deptName?: string) => void;
-  onOpenProspectus: () => void;
+  onOpenEnquiry?: (deptName?: string) => void;
+  onOpenProspectus?: () => void;
+  onOpenEnquiryWithDept?: (deptName?: string) => void;
 }
 
 export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
   onSelectDepartment,
   onOpenEnquiry,
-  onOpenProspectus
+  onOpenProspectus,
+  onOpenEnquiryWithDept
 }) => {
+  const handleEnquiry = (deptName?: string) => {
+    if (onOpenEnquiryWithDept) {
+      onOpenEnquiryWithDept(deptName);
+    } else if (onOpenEnquiry) {
+      onOpenEnquiry(deptName);
+    }
+  };
   const [filter, setFilter] = useState<'ALL' | 'BTECH' | 'DIPLOMA'>('ALL');
 
   const filteredDepts = DEPARTMENTS.filter((d) => {
@@ -215,7 +224,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      onClick={() => onOpenEnquiry(dept.name)}
+                      onClick={() => handleEnquiry(dept.name)}
                       className="w-full py-2.5 px-3 rounded-xl text-xs font-extrabold bg-yellow-400 hover:bg-yellow-300 text-slate-950 flex items-center justify-center gap-1 transition cursor-pointer shadow-xs border border-yellow-500"
                     >
                       <Sparkles className="w-3.5 h-3.5" />

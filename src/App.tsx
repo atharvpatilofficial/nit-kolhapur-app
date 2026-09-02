@@ -103,6 +103,7 @@ function MainApp() {
           <ProgramsSection
             onSelectDepartment={(dept) => setSelectedDepartment(dept)}
             onOpenEnquiryWithDept={(deptName) => handleOpenEnquiryWithDept(deptName)}
+            onOpenProspectus={() => setIsProspectusOpen(true)}
           />
         </motion.div>
 
