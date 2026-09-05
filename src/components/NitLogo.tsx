@@ -26,7 +26,7 @@ export const NitLogo: React.FC<NitLogoProps> = ({
         <div className="absolute inset-0 rounded-full bg-yellow-400/25 blur-md scale-110 pointer-events-none animate-pulse" />
       )}
       <img
-        src="/nit-logo.svg"
+        src={`${import.meta.env.BASE_URL}nit-logo.svg`}
         alt="New Institute of Technology (NIT) Kolhapur Official Emblem"
         className="w-full h-full object-contain select-none pointer-events-none drop-shadow-xs"
         loading="eager"
